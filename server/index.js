@@ -16,7 +16,14 @@ const gmail_user = process.env.GMAIL_PASSWORD
 
 const app = express()
 
-app.use(cors())
+const corsOptions = {
+  origin: 'https://woo-ecommerce.vercel.app', // Replace with your actual client origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  optionsSuccessStatus: 204, // No Content for preflight requests
+};
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
