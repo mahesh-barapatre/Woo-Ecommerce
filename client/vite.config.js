@@ -9,6 +9,14 @@ export default defineConfig({
   //     '/api' : 'http://localhost:8080'
   //   },
   // },
+  proxy: {
+      '/api': {
+           target: 'https://woo-ecommerce-server.onrender.com/',
+           changeOrigin: true,
+           secure: false,      
+           ws: true,
+       }
+  }
 
   plugins: [react()],
 })
