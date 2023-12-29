@@ -6,7 +6,7 @@ export default defineConfig({
 
   server: {
   proxy: {
-      '/api': {
+      'https://woo-ecommerce-server.onrender.com': {
            target: 'https://woo-ecommerce-server.onrender.com',
            changeOrigin: true,
            secure: false,      
