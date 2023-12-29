@@ -10,16 +10,13 @@ var cookieParser = require('cookie-parser')
 const authMiddleware = require('./middlewares/auth')
 const User = require('./models/userModel')
 const nodemailer = require('nodemailer')
-const BASE_URL = process.env.BASE_URL
+// const BASE_URL = process.env.BASE_URL
 const gmail_pass = process.env.GMAIL_USER
 const gmail_user = process.env.GMAIL_PASSWORD
 
 const app = express()
 
-app.use(cors({
-    origin: BASE_URL,
-  credentials: true, 
-}))
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))

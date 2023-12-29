@@ -1,5 +1,7 @@
 // const serverUrl = "http://localhost:8080";
 //
-const serverUrl = windows.location.origin;
+
+const serverUrl = "https://woo-ecommerce-server.onrender.com/api";
+
 
 export default serverUrl;
